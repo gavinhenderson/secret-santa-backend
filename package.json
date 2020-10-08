@@ -1,0 +1,19 @@
+{
+  "name": "secret-santa-backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/gavinhenderson/secret-santa-backend",
+  "author": "Gavin Henderson <gavin.henderson@hotmail.co.uk>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "debug": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "apollo-server": "^2.18.2",
+    "graphql": "^15.3.0"
+  }
+}
