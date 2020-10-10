@@ -7,8 +7,14 @@ const typeDefs = gql`
     number: String!
   }
 
+  type ValidationError {
+    personId: String!
+    field: String!
+    error: String!
+  }
+
   type GenerateMatchesPayload {
-    validationErrors: [String!]!
+    validationErrors: [ValidationError!]!
   }
 
   type Mutation {

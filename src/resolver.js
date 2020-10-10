@@ -9,6 +9,11 @@ const resolvers = {
   GenerateMatchesPayload: {
     validationErrors: () => [],
   },
+  ValidationError: {
+    personId: () => "",
+    field: () => "",
+    error: () => "",
+  },
 };
 
 module.exports = { resolvers };
