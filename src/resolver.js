@@ -1,4 +1,5 @@
 const { generateMatches } = require("./generate-matches");
+const { sendMatches } = require("./send-matches");
 
 const resolvers = {
   Query: {
@@ -6,10 +7,9 @@ const resolvers = {
   },
   Mutation: {
     echo: (_, { input }) => input,
-    generateMatches: (_, { people }) => {
+    generateMatches: async (_, { people }) => {
       const matches = generateMatches(people);
-
-      console.log(matches);
+      await sendMatches(people, matches);
 
       return [];
     },
