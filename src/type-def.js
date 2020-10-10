@@ -5,6 +5,7 @@ const typeDefs = gql`
     id: String!
     name: String!
     number: String!
+    exceptions: [String!]!
   }
 
   type ValidationError {
