@@ -1,23 +1,6 @@
-const { ApolloServer, gql } = require("apollo-server");
-
-const typeDefs = gql`
-  type Mutation {
-    echo(input: String!): String!
-  }
-
-  type Query {
-    helloWorld: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    helloWorld: () => "Hello, world!",
-  },
-  Mutation: {
-    echo: (_, { input }) => input,
-  },
-};
+const { ApolloServer } = require("apollo-server");
+const { typeDefs } = require("./type-def");
+const { resolvers } = require("./resolver");
 
 const server = new ApolloServer({
   typeDefs,
