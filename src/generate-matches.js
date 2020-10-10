@@ -1,5 +1,8 @@
 const generateMatches = (people) => {
-  const ids = Object.keys(people);
+  const peopleAsObject = Object.fromEntries(
+    people.map((person) => [person.id, person])
+  );
+  const ids = Object.keys(peopleAsObject);
   const numberOfPeople = ids.length;
 
   const matches = {};
@@ -12,7 +15,7 @@ const generateMatches = (people) => {
     const currentSelection = getRandomItem(possiblePeople);
 
     // set matches
-    matches[currentId] = people[currentSelection];
+    matches[currentId] = peopleAsObject[currentSelection];
     alreadyAssigned.push(currentSelection);
   }
 

@@ -1,18 +1,26 @@
+const { generateMatches } = require("./generate-matches");
+
 const resolvers = {
   Query: {
     helloWorld: () => "Hello, world!",
   },
   Mutation: {
     echo: (_, { input }) => input,
-    generateMatches: () => ({ validationErrors: [] }),
+    generateMatches: (_, { people }) => {
+      const matches = generateMatches(people);
+
+      console.log(matches);
+
+      return [];
+    },
   },
   GenerateMatchesPayload: {
     validationErrors: () => [],
   },
   ValidationError: {
-    personId: () => "",
-    field: () => "",
-    error: () => "",
+    personId: ({ personId }) => personId,
+    field: ({ field }) => field,
+    error: (error) => error,
   },
 };
 

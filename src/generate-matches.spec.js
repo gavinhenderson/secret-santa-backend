@@ -2,14 +2,14 @@ const { generateMatches } = require("./generate-matches");
 
 it("assigns every person another person", () => {
   // Act
-  const people = {
-    1: { name: "person1", id: 1 },
-    2: { name: "person2", id: 2 },
-    3: { name: "person3", id: 3 },
-    4: { name: "person4", id: 4 },
-    5: { name: "person5", id: 5 },
-    6: { name: "person6", id: 6 },
-  };
+  const people = [
+    { name: "person1", id: 1 },
+    { name: "person2", id: 2 },
+    { name: "person3", id: 3 },
+    { name: "person4", id: 4 },
+    { name: "person5", id: 5 },
+    { name: "person6", id: 6 },
+  ];
 
   // Arrange
   const matches = generateMatches(people);
@@ -25,14 +25,14 @@ it("assigns every person another person", () => {
 
 it("nobody has themselves", () => {
   // Act
-  const people = {
-    1: { name: "person1", id: 1 },
-    2: { name: "person2", id: 2 },
-    3: { name: "person3", id: 3 },
-    4: { name: "person4", id: 4 },
-    5: { name: "person5", id: 5 },
-    6: { name: "person6", id: 6 },
-  };
+  const people = [
+    { name: "person1", id: 1 },
+    { name: "person2", id: 2 },
+    { name: "person3", id: 3 },
+    { name: "person4", id: 4 },
+    { name: "person5", id: 5 },
+    { name: "person6", id: 6 },
+  ];
 
   // Arrange
   const matches = generateMatches(people);
