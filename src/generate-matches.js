@@ -12,7 +12,11 @@ const generateMatches = (people) => {
   for (let currentId of ids) {
     const unassigned = setSubtraction(new Set(ids), new Set(alreadyAssigned));
     const possiblePeople = setSubtraction(unassigned, new Set([currentId]));
-    const currentSelection = getRandomItem(possiblePeople);
+    const withoutExceptions = setSubtraction(
+      possiblePeople,
+      new Set(peopleAsObject[currentId].exceptions)
+    );
+    const currentSelection = getRandomItem(withoutExceptions);
 
     // set matches
     matches[currentId] = peopleAsObject[currentSelection];

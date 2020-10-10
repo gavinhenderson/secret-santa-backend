@@ -12,12 +12,8 @@ const sendMatches = async (people, matches) => {
   for (const currentPerson of people) {
     const matchPerson = matches[currentPerson.id];
 
-    const message = `
-Hi ${currentPerson.name},
-
-You have been added to Secret Santa. You have must buy a gift for ${matchPerson.name.toUpperCase()}
-
-From Santa 🎅
+    const { name } = currentPerson;
+    const message = `Hi ${name}, You have must buy a gift for ${matchPerson.name.toUpperCase()}. From Santa
     `;
 
     await client.messages.create({
