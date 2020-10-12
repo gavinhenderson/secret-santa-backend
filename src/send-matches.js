@@ -13,7 +13,7 @@ const sendMatches = async (people, matches) => {
     const matchPerson = matches[currentPerson.id];
 
     const { name } = currentPerson;
-    const message = `Hi ${name}, You have must buy a gift for ${matchPerson.name.toUpperCase()}. From Santa
+    const message = `Hi ${name}, You must buy a gift for ${matchPerson.name.toUpperCase()}. From Santa
     `;
 
     await client.messages.create({
